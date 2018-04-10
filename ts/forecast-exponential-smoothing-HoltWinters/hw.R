@@ -4,7 +4,7 @@
 # Plot data:
 
 skirts <- scan("https://raw.githubusercontent.com/subwiz/r-playground/master/ts/forecast-exponential-smoothing-HoltWinters/skirts.dat",skip=5)
-skirtsseries <- ts(skirts,start=c(1866))
+skirtsseries <- ts(skirts, start=c(1866), frequency=1)
 plot.ts(skirtsseries)
 
 # Forecast for input period:
@@ -15,5 +15,6 @@ plot(skirtsseriesforecasts)
 # Forecast for 19 time units beyond:
 
 library("forecast")
-skirtsseriesforecasts2 <- forecast:::forecast.HoltWinters(skirtsseriesforecasts, h=19)
+hw <- stats::HoltWinters(skirtsseries, gamma=FALSE)
+skirtsseriesforecasts2 <- forecast(hw, h=19)
 plot(skirtsseriesforecasts2)
