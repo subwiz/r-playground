@@ -12,7 +12,7 @@ plot.ts(skirtsseries)
 skirtsseriesforecasts <- HoltWinters(skirtsseries, gamma=FALSE)
 plot(skirtsseriesforecasts)
 
-# Forecast for input period:
+# Forecast for 19 time units beyond:
 
 library("forecast")
 skirtsseriesforecasts2 <- forecast:::forecast.HoltWinters(skirtsseriesforecasts, h=19)
