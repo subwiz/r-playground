@@ -74,13 +74,12 @@ plot(fcast)
 
 # Forecast with holdout, to verify the actual with prediction:
 hold <- window(ts(deseasonal_cnt), start=700)
-fit_no_holdout = arima(ts(deseasonal_cnt[-c(700:725)]), order=c(1,1,7))
+fit_no_holdout <- arima(ts(deseasonal_cnt[-c(700:725)]), order=c(1,1,7))
 fcast_no_holdout <- forecast(fit_no_holdout,h=25)
 plot(fcast_no_holdout, main=" ")
 lines(ts(deseasonal_cnt))
 
 # Forecast with seasonality:
-fit_w_seasonality = auto.arima(deseasonal_cnt, seasonal=TRUE)
-fit_w_seasonality
+fit_w_seasonality <- auto.arima(deseasonal_cnt, seasonal=TRUE)
 seas_fcast <- forecast(fit_w_seasonality, h=30)
 plot(seas_fcast)
