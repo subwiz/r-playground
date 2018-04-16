@@ -1,5 +1,5 @@
 # From: http://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html
-# Data: annual diameter of women???s skirts at the hem, from 1866 to 1911
+# Data: annual diameter of women's skirts at the hem, from 1866 to 1911
 
 # Plot data:
 
